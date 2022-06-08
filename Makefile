@@ -1,6 +1,6 @@
 # HASURA SEED SOURCE
 # it is used in the
-seed?=dummy
+seed?=seed
 
 # HASURA MIGRATION STEPS
 # it is used in the hasura postgres migration scripts to control

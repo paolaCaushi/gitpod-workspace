@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS "public"."messages" (
 
   CONSTRAINT "messages_pkey" PRIMARY KEY ("id"),
 
-  CONSTRAINT "messages_user_id_fkey"
+
 
   FOREIGN KEY (user_id) REFERENCES "public".users(id),
 
