@@ -60,8 +60,6 @@ migrate:
 	
 migrate-status:
 	@hasura migrate status --project hasura-ecomm --database-name default
-
-
 migrate-up:
 	@hasura migrate apply --project hasura-ecomm --database-name default --up $(steps)
 

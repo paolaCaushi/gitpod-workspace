@@ -1,12 +1,22 @@
 
-
+INSERT INTO "public"."users" ("id", "name")
+-- Describe the dataset:
+SELECT
+CONCAT('t', "u") AS "id",
+CONCAT('Name', "u") AS "name"
+-- Set the size of the dataset:
+FROM generate_series(1, 20) AS "u"
+-- Manage conflicts with existing values:
+ON CONFLICT ON CONSTRAINT "user_pkey"
+DO UPDATE SET
+"name" = EXCLUDED."name";
 
 INSERT INTO "public"."messages" ("id", "room_id", "user_id", "message","created_at")
 -- Describe the dataset:
 SELECT
 CONCAT('m', "r") AS "id",
 CONCAT('r', floor(random() * (10 - 1 + 1) + 1)) AS "room_id",
-CONCAT('t', floor(random() * (10 - 1 + 1) + 1)) AS "user_id",
+CONCAT('t', floor(random() * (10- 1 + 1) + 1)) AS "user_id",
 CONCAT('Message', "r") AS "message",
 CURRENT_TIMESTAMP AS "created_at"
 -- Set the size of the dataset:
